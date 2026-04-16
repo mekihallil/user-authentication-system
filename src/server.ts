@@ -13,7 +13,7 @@ if (!MONGO_URI) {
 
 const startServer = async () => {
   try {
-    await mongoose.connect(MONGO_URI);
+    await mongoose.connect(MONGO_URI as string);
     console.log("MongoDB Connected");
 
     app.listen(PORT, () => {
