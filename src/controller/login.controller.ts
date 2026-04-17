@@ -8,10 +8,7 @@ type loginBody = {
   password: string;
 };
 
-export const loginUser = async (
-  req: Request<{}, {}, loginBody>,
-  res: Response,
-) => {
+export const login = async (req: Request<{}, {}, loginBody>, res: Response) => {
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
@@ -20,6 +17,7 @@ export const loginUser = async (
         _id: user._id,
         name: user.name,
         email: user.email,
+        role: user.role,
         token: generateToken(user._id.toString()),
       });
     } else {

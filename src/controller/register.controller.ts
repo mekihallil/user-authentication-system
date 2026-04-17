@@ -8,7 +8,7 @@ type ReqBody = {
   email: string;
   password: string;
 };
-export const registerUser = async (
+export const register = async (
   req: Request<{}, {}, ReqBody>,
   res: Response,
 ) => {
@@ -28,6 +28,7 @@ export const registerUser = async (
       _id: user._id,
       name: user.name,
       email: user.email,
+      role: user.role,
       token: generateToken(user._id.toString()),
     });
   } catch (error) {
