@@ -1,6 +1,2 @@
 POST http://localhost:5000/api/auth/logout
 Content-Type :application/json
-{
-  "email":"oumer2@gmail.com",
-  "password":"12378996"
-}
