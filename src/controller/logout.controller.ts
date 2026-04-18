@@ -11,8 +11,7 @@ export const logout = async (req: Request<{}, {}, ReqBody>, res: Response) => {
     const { email, password } = req.body;
     const existUser = await User.findOne({ email });
     if (existUser && (await bcrypt.compare(password, existUser.password))) {
-      const user = await User.deleteOne({ _id: existUser._id });
-      res.status(200).json({ message: "Logout successfully" });
+      res.status(200).json({ message: "Logout successfully", token: "" });
     }
   } catch (error) {
     console.error("ERROR:", error);

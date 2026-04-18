@@ -1,7 +1,10 @@
 POST http://localhost:5000/api/auth/login
 Content-Type :application/json
 
-{
-  "email":"abel@gmail.com",
-  "password":"12378996"
-}
+// if user register before 
+
+// {
+//   "name":"username",
+//   "email":"user@gmail.com",
+//   "password":"password"
+// }
